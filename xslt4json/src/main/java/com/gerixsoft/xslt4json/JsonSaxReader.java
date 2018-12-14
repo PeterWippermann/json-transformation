@@ -8,8 +8,6 @@ import org.antlr.runtime.CommonTokenStream;
 import org.antlr.runtime.RecognitionException;
 import org.antlr.runtime.tree.CommonTree;
 import org.antlr.runtime.tree.Tree;
-import org.xerial.json.impl.JSONLexer;
-import org.xerial.json.impl.JSONParser;
 import org.xml.sax.ContentHandler;
 import org.xml.sax.DTDHandler;
 import org.xml.sax.EntityResolver;
@@ -20,6 +18,9 @@ import org.xml.sax.SAXNotRecognizedException;
 import org.xml.sax.SAXNotSupportedException;
 import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.AttributesImpl;
+
+import com.github.peterwippermann.xslt4json.JSONLexer;
+import com.github.peterwippermann.xslt4json.JSONParser;
 
 public class JsonSaxReader implements XMLReader {
 
