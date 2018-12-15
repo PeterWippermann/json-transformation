@@ -105,8 +105,8 @@ object
 	;
 	
 field
-	: String ':' value
-	  -> ^(XML_ELEMENT["field"] ^(XML_ATTRIBUTE["name"] String) value)
+	: fieldname=String ':' value
+	  -> ^(XML_ELEMENT[fieldname] value)
 	;	
 	
 array

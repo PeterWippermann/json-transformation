@@ -41,15 +41,15 @@ public class Test {
 		JsonSaxWriter writer = new JsonSaxWriter(new FileOutputStream(outputFile));
 		
 		SchemaFactory schemaFactory = SchemaFactory.newInstance("http://www.w3.org/2001/XMLSchema");
-		StreamSource schema2 = new StreamSource(Test.class
-				.getResourceAsStream("/json.xsd"));
-		Schema schema = schemaFactory.newSchema(schema2);
+		Schema schema;
+		schema = schemaFactory.newSchema(new StreamSource(Test.class.getResourceAsStream("/json.xsd")));
 		ValidatorHandler validatorHandler = schema.newValidatorHandler();
 		validatorHandler.setErrorHandler(new __ErrorHandler());
 		validatorHandler.setContentHandler(writer);
 		
 		TransformerHandler transformerHandler = ((SAXTransformerFactory)TransformerFactory.newInstance()).newTransformerHandler(new StreamSource(xsltFile));
-		transformerHandler.setResult(new SAXResult(validatorHandler));
+		//transformerHandler.setResult(new SAXResult(validatorHandler)); // TODO uncomment this for XSD validation
+		transformerHandler.setResult(new SAXResult(writer)); 
 		
 		JsonSaxReader reader = new JsonSaxReader();
 		reader.setContentHandler(transformerHandler);

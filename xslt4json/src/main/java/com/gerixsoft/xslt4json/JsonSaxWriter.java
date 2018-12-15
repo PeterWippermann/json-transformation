@@ -99,7 +99,8 @@ public class JsonSaxWriter implements ContentHandler {
 				} else if (localName.equals("integer") || localName.equals("double")
 						|| localName.equals("boolean")) {
 				} else {
-					throw new SAXException("not valid element: " + localName);
+//					throw new SAXException("not valid element: " + localName);
+					write("\"" + localName + "\": ");
 				}
 			}
 		} else {
@@ -125,7 +126,7 @@ public class JsonSaxWriter implements ContentHandler {
 			} else if (localName.equals("integer") || localName.equals("double")
 					|| localName.equals("boolean")) {
 			} else {
-				throw new SAXException("not valid element: " + localName);
+//				throw new SAXException("not valid element: " + localName);
 			}
 		} else {
 			throw new SAXException("not valid element: " + qName);
