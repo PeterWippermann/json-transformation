@@ -20,8 +20,9 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 public class AppTest {
 	@Test
 	public void runJolt() throws JsonParseException, JsonMappingException, IOException {
-		String specFile = "/json/sample/spec.json";
-		String inputFile = "/json/sample/input.json";
+		String path = "/json/wm/";
+		String specFile = path + "spec.json";
+		String inputFile = path + "input.json";
 
 		transforn(specFile, inputFile);
 	}

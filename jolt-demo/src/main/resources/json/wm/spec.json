@@ -1,0 +1,17 @@
+[
+    {
+        "operation": "shift",
+        "spec": {
+            "h": {
+                "ud123": "Name",
+                "ud456": "WKN"
+                },
+            "h123": {
+                "*": {
+                    "hd123": "Optionen[&1].Bezeichnung",
+                    "hd456": "Optionen[&1].Laufende Nummer"
+                }
+            }
+        }
+    }
+]
