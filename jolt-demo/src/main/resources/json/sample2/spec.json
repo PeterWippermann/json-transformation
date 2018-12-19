@@ -1,0 +1,31 @@
+[
+    {
+        "operation": "shift",
+        "spec": {
+            "h": {
+                "ud123": "Name",
+                "ud456": ["WKN","ISIN"]
+                },
+            "h123": {
+                "*": {
+                    "hd123": "Optionen[#2].Bezeichnung",
+                    "hd456": "Optionen[#2].Laufende Nummer",
+                    "hd789": "Optionen[#2].Sub-WKN"
+                }
+            }
+        }
+    },
+    {
+        "operation": "com.github.peterwippermann.json.PetersTransformer",
+        "spec": {
+            "ISIN": "WKN-zu-ISIN",
+            "Optionen": {
+                "*": {
+                    "Sub-WKN": "WKN-zu-ISIN"
+                }
+            }
+        }
+    }
+    
+
+]
